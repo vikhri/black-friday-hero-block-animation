@@ -50,6 +50,7 @@ body {
 }
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100svh;
@@ -67,25 +68,27 @@ body {
 }
 
 .top-header {
+  z-index: 2;
   font-family: Inter, sans-serif;
   display: flex;
   column-gap: 100px;
   align-items: center;
-  height: 100px;
 }
 
 .top-header__logo-wrap {
-  max-width: 120px;
-  height: 100%;
+  max-width: 190px;
+  height: 100px;
 }
 
 .top-header__logo {
   height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .top-header__nav-list {
   display: flex;
-  column-gap: 35px;
+  column-gap: 60px;
   list-style: none;
 }
 
@@ -126,20 +129,92 @@ a:hover {
 .hero__content {
   display: flex;
   flex-grow: 1;
-  align-items: center;
 }
 
 .hero__text {
-  width: 55%;
+  position: relative;
+  width: 50%;
+  padding-left: 200px;
+  padding-top: 170px;
+  z-index: 2;
 }
 
-.hero__text::before {
-  position: ;
+.hero::after {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  width: 70%;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: '';
+
+  font-size: 250px;
+  font-family: 'Roboto Condensed Light';
+
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(90,100,112,1) 100%);
+  border-radius: 50%;
+}
+
+.hero::before {
+  z-index: 2;
+  position: absolute;
+  top: 34%;
+  right: 10%;
+  transform: translate( 0, -50%);
+  width: 30%;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: '70%';
+  color: var(--bg-color);
+
+  font-size: 250px;
+  font-family: 'Roboto Condensed Bold';
+  font-weight: 700;
+
+  background: rgb(217,255,176);
+  background: radial-gradient(circle, rgba(217,255,176,1) 0%, rgba(108,190,89,1) 100%);
+  border-radius: 50%;
+  animation: scale 1s infinite ease-in-out;
+  animation-direction: alternate;
+
+  box-shadow: 7px 10px 83px -22px rgba(190,209,151,1);
+}
+
+.hero__text::after {
+  z-index: 2;
+  position: absolute;
+  bottom: -7%;
+  right: -43%;
+  transform: translate( 0, -50%) rotate(-15deg);
+  width: 32%;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: '50%';
+  color: var(--main-font-color);
+  border-radius: 50%;
+
+  font-size: 100px;
+  font-family: 'Roboto Condensed Bold';
+  font-weight: 700;
+
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(90,100,112,1) 100%);
 }
 
 .hero__heading {
   font-family: 'Roboto Condensed Bold', sans-serif;
-  font-size: 5rem;
+  font-size: 5.3rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -148,5 +223,16 @@ a:hover {
   font-family: 'Roboto Condensed light', sans-serif;
   font-size: 2rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.5;
+}
+
+
+@keyframes scale {
+  from {
+    transform: translate( 0, -50%) rotate(15deg) scale(100%);
+  }
+
+  to {
+    transform: translate( 0, -50%) rotate(20deg) scale(110%);
+  }
 }
