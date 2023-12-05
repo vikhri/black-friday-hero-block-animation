@@ -44,6 +44,31 @@
     font-size: 24px;
   }
 }
+@media screen and (max-width: 1700px) {
+  :root {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+}
 
 body {
   font-size: 20px;
@@ -148,7 +173,7 @@ a:hover {
 
 .hero__content {
   position: relative;
-  width: 50%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -156,14 +181,24 @@ a:hover {
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .hero__content {
+    width: 100%;
+  }
+}
+
+
+
 .hero__images {
   display: flex;
   width: 80%;
 }
 
-.hero__images::before {
-  bottom: -26%;
-  left: -8%;
+
+
+.hero::before {
+  bottom: 0;
+  left: 4%;
   z-index: 0;
   width: 30%;
   height: 30%;
@@ -174,12 +209,12 @@ a:hover {
   background-size: contain;
 }
 
-.hero::after {
+.hero__main::after {
   z-index: 3;
   width: 12%;
   height: 15%;
-  top: 15%;
-  right: 2%;
+  top: 10%;
+  right: 32%;
   transform: rotate(306deg);
   position: absolute;
   content: '';
@@ -206,6 +241,10 @@ a:hover {
   z-index: 2;
 }
 
+.hero__content {
+  position: relative;
+}
+
 .hero__content::before {
   z-index: 1;
   position: absolute;
@@ -227,14 +266,18 @@ a:hover {
   border-radius: 50%;
 }
 
-.hero::before {
+.hero__main {
+  position: relative;
+}
+
+.hero__main::before {
   z-index: 2;
   position: absolute;
   top: 44%;
-  right: 15%;
+  right: 0;
   transform: translate( 0, -50%);
-  width: 30%;
-  aspect-ratio: 1/1;
+  width: 18rem;
+  height: 18rem;
 
   display: flex;
   align-items: center;
@@ -255,14 +298,22 @@ a:hover {
   box-shadow: 7px 10px 83px -22px rgba(190,209,151,1);
 }
 
+@media screen and (max-width: 1200px) {
+  .hero__main::before {
+    font-size: 5rem;
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
 .hero__content::after {
   z-index: 2;
   position: absolute;
   bottom: -22%;
   right: -23%;
   transform: rotate(-15deg);
-  width: 28%;
-  aspect-ratio: 1/1;
+  width: 10rem;
+  height: 10rem;
 
   display: flex;
   align-items: center;
@@ -278,6 +329,14 @@ a:hover {
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(90,100,112,1) 100%);
 }
+
+@media screen and (max-width: 1024px) {
+
+  .hero__content::after {
+    display: none;
+  }
+}
+
 
 .hero__heading {
   font-family: 'Roboto Condensed Bold', sans-serif;
