@@ -14,3 +14,7 @@ Used CSS animation on @key-frames + Vanilla JS.
 
 Pet project.
 Design inspired by https://online.synchronize.ru/
+_______________________________________________________
+
+Ссылка на деплой:
+https://vikhri.github.io/black-friday-hero-block-animation/
