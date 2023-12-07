@@ -99,7 +99,7 @@ body {
 
   background-color: var(--bg-color);
   color: white;
-  background-image: url("/bg-net.svg");
+  background-image: url("public/bg-net.svg");
 }
 
 @media screen and (max-width: 480px) {

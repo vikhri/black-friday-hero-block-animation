@@ -1,5 +1,3 @@
-import './style.css'
-
 const openMenuButton = document.querySelector(".js-menu-open-button");
 const closeMenuButton = document.querySelector(".js-menu-close-button");
 const menu = document.querySelector(".js-menu");
